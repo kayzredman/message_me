@@ -3,43 +3,29 @@
   Say Something
 </h4>
 
-
+<!-- Start of Grid for the 2 Collomns i.e Main-right & Main-Left -->
 <div class="ui two column grid">
+
+    <!-- Start of Manin Grid on the right-->
     <div class="twelve wide column">
       <div class="ui fluid raised card chatbox">
           <div class="content">
-                <div class="ui feed">
-                  <div class="event">
-                    <div class="content">
-                      <div class="summary">
-                         <em>Elliot Fu</em>: added Jenny Hess as a friend
+              <div class="ui feed">
+                <% @messages.each do |message| %>
+                    <div class="event">
+                      <div class="content">
+                        <div class="summary">
+                          <em><%= message.user.username %></em>: <%= message.body %>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <div class="event">
-                    <div class="content">
-                      <div class="summary">
-                         <em>Stevie Feliciano</em>: added Elliot Fu as a friend
-                      </div>
-                    </div>
-                  </div>
-                  <div class="event">
-                    <div class="content">
-                      <div class="summary">
-                         <em>Helen Troy</em>: Added Christian Rocha as a friend
-                      </div>
-                    </div>
-                  </div>
-                  <div class="event">
-                    <div class="content">
-                      <div class="summary">
-                         <em>Christian Rocha</em>: Test message
-                      </div>
-                    </div>
-                  </div>
+                  <% end %>
+                
                 </div>
-            </div>
-            <div class="extra content">
+              </div>
+
+        <!-- Grid below the main grid -->
+        <div class="extra content">
               <form class="ui reply form">
                   <div class="field">
                     <div class="ui fluid icon input">
@@ -49,25 +35,27 @@
                   </div>
               </form>
             </div>
-          </div>
-      </div>
+          </div> <!-- End of textbox below the main grid -->
 
+      </div> <!-- End of Manin Grid on the right-->
 
-        <div class="four wide column">
-          <div class="ui fluid raised card chatbox">
-              <div class="content">
-                  <div class="ui inverted vertical menu">
-                    <a class="active item">
-                      Home
-                    </a>
-                    <a class="item">
-                      Messages
-                    </a>
-                    <a class="item">
-                      Friends
-                    </a>
-                   </div>
-              </div>
-            </div>
-        </div>
-</div>
+              <!-- Start of Column on the left side -->
+              <div class="four wide column">
+                  <div class="ui fluid raised card chatbox">
+                    <div class="content">
+                        <div class="ui inverted vertical menu">
+                          <a class="active item">
+                            Home
+                          </a>
+                          <a class="item">
+                            Messages
+                          </a>
+                          <a class="item">
+                            Friends
+                          </a>
+                         </div>
+                    </div>
+                  </div>
+              </div> <!-- End of Column on the left side -->
+
+    </div> <!-- End of Grid for the 2 Collomns i.e Main-right & Main-Left -->
