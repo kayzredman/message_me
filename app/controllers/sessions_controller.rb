@@ -13,6 +13,7 @@ class SessionsController < ApplicationController
           flash.now[:error] = "Blimey!..there was a problem with your login info"
           render 'new'
         end
+        #byebug
     end
 
     def destroy
